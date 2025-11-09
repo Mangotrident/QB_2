@@ -1,6 +1,8 @@
 
 # Quantum Bioenergetics Mapping (Fixed)
 
+![ENAQT Bell Curve Example](outputs/enaqt_demo.png)
+
 Drop‑in repo you can push to GitHub and run locally or on Streamlit.
 
 ## Quick Start
