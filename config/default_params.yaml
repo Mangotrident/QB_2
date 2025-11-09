@@ -1,0 +1,22 @@
+
+hamiltonian:
+  J_0: 0.020
+  J_max: 0.100
+  epsilon_0: 0.0
+  alpha: 0.010
+
+noise:
+  sigma: 0.008
+  gamma_range: [0.001, 0.05]    # sweep (start, end)
+  gamma_step:
+    scale: log
+    num: 40
+  gamma_default: 0.02
+
+sinks:
+  k_sink: 0.10
+  k_loss: 0.01
+
+integration:
+  dt: 0.2
+  t_max: 40.0
