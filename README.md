@@ -1,28 +1,21 @@
 
-# Quantum Bioenergetics Mapping (Fixed)
-
-![ENAQT Bell Curve Example](outputs/enaqt_demo.png)
-
-Drop‑in repo you can push to GitHub and run locally or on Streamlit.
+# Quantum Bioenergetics Mapping (ENAQT-validated)
 
 ## Quick Start
-
-```bash
+```
 pip install -r requirements.txt
 python QB_6_main_pipeline_fixed.py
 ```
 
-Outputs appear in `outputs/`.
-
-## Streamlit (optional)
-
-```bash
+## Streamlit
+```
 streamlit run streamlit_app.py
+streamlit run streamlit_upload.py   # upload your own omics
 ```
 
-This shows the ENAQT curve and lets you tweak parameters.
-
-## Notes
-
-- Real TCGA/GEO loading stubs are present; the pipeline uses synthetic data unless you wire in GDC/GEO.
-- The ENAQT physics uses a Lindblad master equation with sink flux for ETE.
+## CLI
+```
+python qemd.py simulate --expr ./data/templates/sample_omics.csv --graph ./data/templates/graph.json --mapping ./data/templates/mapping.csv --out ./outputs/metrics.json
+python qemd.py cohort --cohort ./data/templates/cohort.csv --graph ./data/templates/graph.json --mapping ./data/templates/mapping.csv --out ./outputs/cohort_metrics.parquet
+python analyze_cohort.py --parquet ./outputs/cohort_metrics.parquet
+```

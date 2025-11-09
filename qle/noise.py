@@ -2,7 +2,6 @@
 import numpy as np
 
 class NoiseModel:
-    """Noise utilities used in the pipeline (static disorder + gamma sweep)."""
     def __init__(self, sigma=0.0):
         self.sigma = float(sigma)
 
@@ -18,11 +17,8 @@ class NoiseModel:
         return H2
 
     def create_gamma_sweep(self, start, end, step):
-        # Accept both float step or 'log' dictionary
         if isinstance(step, dict) and step.get('scale') == 'log':
-            # e.g., {'scale': 'log', 'num': 50}
             num = int(step.get('num', 50))
-            # ensure >0 bounds
             start = max(start, 1e-6)
             end = max(end, start*1.1)
             return np.geomspace(start, end, num=num)

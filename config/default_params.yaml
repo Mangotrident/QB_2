@@ -1,3 +1,4 @@
+
 hamiltonian:
   J_0: 0.025
   J_max: 0.100
@@ -5,10 +6,7 @@ hamiltonian:
   alpha: 0.010
 
 noise:
-  # ↑ Disorder strength — larger σ lets moderate γ help transport
   sigma: 0.08
-
-  # ↑ Sweep gamma over a log range wide enough to see the bell
   gamma_range: [0.0001, 1.0]
   gamma_step:
     scale: log
@@ -16,11 +14,9 @@ noise:
   gamma_default: 0.02
 
 sinks:
-  # ↑ Stronger trap and lower loss enhance the ENAQT peak
   k_sink: 0.20
   k_loss: 0.005
 
 integration:
-  # ↑ Longer evolution to reach steady flux
   dt: 0.2
   t_max: 60.0
